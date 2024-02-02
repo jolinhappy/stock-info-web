@@ -1,5 +1,4 @@
-import { Global } from '@emotion/react';
-import { css } from '@mui/material/styles';
+import { Global, css } from '@emotion/react';
 import { withTheme } from '@mui/styles';
 
 const globalStylesCss = () => css`
