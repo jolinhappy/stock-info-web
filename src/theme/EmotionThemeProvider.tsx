@@ -1,8 +1,8 @@
 import { ThemeProvider } from '@emotion/react';
-import customColor from './BasicColor';
+import customColors from './BasicColors';
 
 const theme = {
-  ...customColor,
+  ...customColors,
 };
 
 const EmotionThemeProvider = ({ children }: { children: React.ReactNode }) => (

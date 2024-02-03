@@ -1,5 +1,5 @@
 const defaultTheme = {
-  background: '#fcfcfc',
+  background: '#ededed',
   white: '#ffffff',
   black: '#000000',
   lightGray: '#d0d0d0',
@@ -17,8 +17,8 @@ const defaultTheme = {
   darkOrange: '#b26a00',
 };
 
-const customColor = {
-  customColor: defaultTheme,
+const customColors = {
+  customColors: defaultTheme,
 };
 
-export default customColor;
+export default customColors;

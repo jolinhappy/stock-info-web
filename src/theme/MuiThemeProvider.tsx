@@ -1,19 +1,19 @@
-import { ThemeProvider, createTheme } from '@material-ui/core/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import IBasicColors from './BasicThemeType';
-import customColor from './BasicColor';
+import customColors from './BasicColors';
 
-declare module '@material-ui/core/styles' {
+declare module '@mui/material/styles' {
   interface Theme {
     customColor: IBasicColors;
   }
   // allow configuration using `createTheme`
   interface ThemeOptions {
-    customColor?: IBasicColors
+    customColors?: IBasicColors
   }
 }
 
 const theme = createTheme({
-  ...customColor,
+  ...customColors,
 });
 
 const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => (

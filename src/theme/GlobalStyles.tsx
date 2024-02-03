@@ -76,6 +76,7 @@ const globalStylesCss = () => css`
   a {
     line-height: inherit;
     text-decoration: none;
+    color: inherit;
   }
 `;
 
