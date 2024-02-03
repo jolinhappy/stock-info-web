@@ -1,20 +1,21 @@
+import { RouterProvider } from 'react-router-dom';
+import { StyledEngineProvider } from '@mui/material/styles';
 import GlobalStyles from './theme/GlobalStyles';
 import EmotionThemeProvider from './theme/EmotionThemeProvider';
 import MuiThemeProvider from './theme/MuiThemeProvider';
-import TopBar from './components/common/TopBar';
+import router from './router';
 
-const App = () => {
-  console.log();
-  return (
-    <div className="App">
-      <GlobalStyles />
-      <EmotionThemeProvider>
-        <MuiThemeProvider>
-          <TopBar />
-        </MuiThemeProvider>
-      </EmotionThemeProvider>
-    </div>
-  );
-};
+const App = () => (
+  <div className="App">
+    <GlobalStyles />
+    <EmotionThemeProvider>
+      <MuiThemeProvider>
+        <StyledEngineProvider injectFirst>
+          <RouterProvider router={router} />
+        </StyledEngineProvider>
+      </MuiThemeProvider>
+    </EmotionThemeProvider>
+  </div>
+);
 
 export default App;
