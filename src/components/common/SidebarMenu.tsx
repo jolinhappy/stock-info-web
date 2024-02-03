@@ -20,7 +20,12 @@ const SidebarMenu = ({ menuData }:ISidebarMenuProps) => {
   const [currentChildTab, setCurrentChildTab] = useState(0);
   const handleChangeTab = (options: { isParent: boolean } = { isParent: false }) => (event: React.SyntheticEvent, newValue: number) => {
     const { isParent } = options;
-    return isParent ? setCurrentParentTab(newValue) : setCurrentChildTab(newValue);
+    if (isParent) {
+      setCurrentParentTab(newValue);
+      setCurrentChildTab(0);
+    } else {
+      setCurrentChildTab(newValue);
+    }
   };
   return (
     <>
