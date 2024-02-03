@@ -38,7 +38,15 @@ const SidebarMenu = ({ menuData }:ISidebarMenuProps) => {
       >
         {
           menuData.map((tab: any) => (
-            <Tab key={tab.name} label={tab.name} component={Link} to={tab.path} />
+            <Tab
+              icon={<div>{tab.icon}</div>}
+              key={tab.name}
+              label={tab.name}
+              component={Link}
+              to={tab.path}
+              disabled={tab.disabled}
+              sx={{ minHeight: '40px' }}
+            />
           ))
         }
       </StyledTabs>
@@ -47,7 +55,13 @@ const SidebarMenu = ({ menuData }:ISidebarMenuProps) => {
           <StyledTabs value={currentChildTab} orientation="vertical" onChange={handleChangeTab({ isParent: false })}>
             {
               (menuData[currentParentTab]?.childTabs as ISidebarMenuItem[]).map((tab: any) => (
-                <Tab key={tab.name} label={tab.name} component={Link} to={tab.path} />
+                <Tab
+                  key={tab.name}
+                  label={tab.name}
+                  component={Link}
+                  to={tab.path}
+                  disabled={tab.disabled}
+                />
               ))
             }
           </StyledTabs>
