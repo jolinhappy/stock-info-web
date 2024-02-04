@@ -2,7 +2,7 @@ const defaultTheme = {
   background: '#ededed',
   white: '#ffffff',
   black: '#000000',
-  lightGray: '#d0d0d0',
+  lightGray: '#f6f8fa',
   middleGray: '#7b7b7b',
   darkGray: '#4f4f4f',
   text: '#0c0d0d',

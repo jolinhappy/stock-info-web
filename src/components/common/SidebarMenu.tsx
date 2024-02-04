@@ -34,7 +34,7 @@ const SidebarMenu = ({ menuData }:ISidebarMenuProps) => {
         variant="scrollable"
         value={currentParentTab}
         onChange={handleChangeTab({ isParent: true })}
-        sx={{ borderRight: 1, borderColor: 'divider' }}
+        sx={{ borderRight: 1, borderColor: 'divider', height: '650px' }}
       >
         {
           menuData.map((tab: any) => (

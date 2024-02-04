@@ -13,9 +13,9 @@ const StyledMainContentWrapper = styled('div', {
   height: '100%',
   display: 'flex',
   justifyContent: 'center',
-  overflow: 'hidden',
+  overflowY: 'auto',
   backgroundColor: theme.customColors.background,
-  paddingTop: theme.spacing(8),
+  padding: theme.spacing(8, 0, 5),
 }));
 
 const StyledMainSection = styled('section', {
@@ -24,14 +24,13 @@ const StyledMainSection = styled('section', {
   padding: theme.spacing(3, 0),
   display: 'flex',
   flex: '1',
-  overflowY: 'auto',
   maxWidth: '80%',
 }));
 
 const StyledContentWrapper = styled('div', {
   shouldForwardProp: (prop) => isPropValid(prop),
 })(({ theme }: any) => ({
-  padding: theme.spacing(3),
+  padding: theme.spacing(0, 3),
   flex: 1,
 }));
 
@@ -146,7 +145,7 @@ const sidebarMenuData: ISidebarMenuItem[] = [
 ];
 
 const MainLayout = () => (
-  <Box height="100vh" display="flex" flexDirection="column">
+  <Box height="100%" display="flex" flexDirection="column">
     <TopBar />
     <StyledMainContentWrapper>
       <StyledMainSection>

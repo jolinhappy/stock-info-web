@@ -1,6 +1,7 @@
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
+import Box from '@mui/material/Box';
 import styled from '@emotion/styled';
 
 interface IAutoCompleteSearchInputProps {
@@ -28,10 +29,16 @@ const AutoCompleteSearchInput = ({
   onClickOption,
 }: IAutoCompleteSearchInputProps) => (
   <StyledAutocomplete
+    loading
     popupIcon={<SearchIcon />}
-    disableClearable
-    options={autocompleteOptions.map((option: any) => option.title) || []}
-    onInputChange={onSearchInputChange}
+    // disableClearable
+    options={autocompleteOptions ? autocompleteOptions.map((option: any) => ({ label: option.label, id: option.id })) : []}
+    renderOption={(props, option: any) => (
+      <Box component="li" {...props}>{option.label}</Box>
+    )}
+    getOptionLabel={(option: any) => option.label}
+    isOptionEqualToValue={(option: any, value: any) => option.id === value.id}
+    onInputChange={(event, value) => onSearchInputChange(event, value)}
     onChange={onClickOption}
     renderInput={(params: any) => (
       <TextField
