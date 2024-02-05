@@ -4,6 +4,7 @@ import GlobalStyles from './theme/GlobalStyles';
 import EmotionThemeProvider from './theme/EmotionThemeProvider';
 import MuiThemeProvider from './theme/MuiThemeProvider';
 import router from './router';
+import { StockInfoDataProvider } from './provider/StockInfoDataProvider';
 
 const App = () => (
   <div className="App">
@@ -11,7 +12,9 @@ const App = () => (
     <EmotionThemeProvider>
       <MuiThemeProvider>
         <StyledEngineProvider injectFirst>
-          <RouterProvider router={router} />
+          <StockInfoDataProvider>
+            <RouterProvider router={router} />
+          </StockInfoDataProvider>
         </StyledEngineProvider>
       </MuiThemeProvider>
     </EmotionThemeProvider>
