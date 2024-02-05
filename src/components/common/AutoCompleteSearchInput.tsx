@@ -1,13 +1,15 @@
+import React from 'react';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import Box from '@mui/material/Box';
 import styled from '@emotion/styled';
+import { IAutoCompleteOption } from '../../types/interface/component';
 
 interface IAutoCompleteSearchInputProps {
   autocompleteOptions: any;
-  onSearchInputChange: any;
-  onClickOption: any;
+  onSearchInputChange: (event: React.SyntheticEvent, value: string) => void;
+  onClickOption: (event: React.SyntheticEvent, value: any) => void;
 }
 
 const StyledAutocomplete = styled(Autocomplete)(() => ({
@@ -31,8 +33,9 @@ const AutoCompleteSearchInput = ({
   <StyledAutocomplete
     loading
     popupIcon={<SearchIcon />}
-    // disableClearable
-    options={autocompleteOptions ? autocompleteOptions.map((option: any) => ({ label: option.label, id: option.id })) : []}
+    options={
+      autocompleteOptions ? autocompleteOptions.map((option: IAutoCompleteOption) => ({ label: option.label, id: option.id, name: option.name })) : []
+    }
     renderOption={(props, option: any) => (
       <Box component="li" {...props}>{option.label}</Box>
     )}
@@ -44,10 +47,6 @@ const AutoCompleteSearchInput = ({
       <TextField
         {...params}
         label="輸入台／美股代號，查看公司價值"
-        InputProps={{
-          ...params.InputProps,
-          type: 'search',
-        }}
         size="small"
       />
     )}
