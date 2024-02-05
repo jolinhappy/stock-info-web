@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import { MainRoutePath, AnalysisReportChildPath } from '../../router/routerConstants';
 import TopBar from '../common/TopBar';
 import SidebarMenu from '../common/SidebarMenu';
-import ISidebarMenuItem from '../../types/interface/component';
+import { ISidebarMenuItem } from '../../types/interface/component';
 
 const StyledMainContentWrapper = styled('div', {
   shouldForwardProp: (prop) => isPropValid(prop),

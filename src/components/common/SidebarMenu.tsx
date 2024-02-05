@@ -3,7 +3,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import ISidebarMenuItem from '../../types/interface/component';
+import { ISidebarMenuItem } from '../../types/interface/component';
 
 const StyledTabs = styled(Tabs)(() => ({
   '& .MuiTabs-indicator': {
