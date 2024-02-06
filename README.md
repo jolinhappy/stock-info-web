@@ -12,7 +12,7 @@
 - race condition的狀況。
 
 ## 專案畫面
-![](https://imgur.com/uYPGMSa.png)
+![](https://imgur.com/r4l3mEh.png)
 
 ## 安裝/啟動方式
 
