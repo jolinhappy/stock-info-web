@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+# Stock Info Web
+以React＋TypeScript搭配finmind API開發的股票基本資料查詢頁面。
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 網站功能
+- 使用者可以透過股票名字或股票代號取得股票相關資訊(目前只能查詢台股)。
+- 使用者可以查看三年、五年、十年的月營收資訊圖表。
+- 使用者可以確認到近六個月的月營收及月營收年增率。
 
-## Available Scripts
+## 待完成/優化項目
+- 月營收年增率的線圖。
+- error handle。
+- race condition的狀況。
 
-In the project directory, you can run:
+## 專案畫面
+![](https://imgur.com/m3RfcuV.png)
 
-### `npm start`
+## 安裝/啟動方式
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+yarn
+```
+```
+yarn start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 環境建置與需求
+- react: v18.2.0,
+- react-router-dom: v6.22.0,
+- typescript: v4.9.5,
