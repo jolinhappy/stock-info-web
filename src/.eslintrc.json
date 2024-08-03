@@ -6,9 +6,7 @@
     "extends": [
       "eslint:recommended",
       "plugin:@typescript-eslint/recommended",
-      "plugin:react/recommended",
-      "airbnb",
-      "airbnb-typescript"
+      "plugin:react/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -72,6 +70,7 @@
             "unnamedComponents": "arrow-function"
         }
       ],
-      "@typescript-eslint/no-explicit-any": "off"
+      "@typescript-eslint/no-explicit-any": "off",
+      "no-empty": "off"
     }
   }

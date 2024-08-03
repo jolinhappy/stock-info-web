@@ -29,37 +29,69 @@ const StyledTableRow = styled(TableRow)(({ theme }: any) => ({
   },
 }));
 
-const CustomTable = ({ columns, rows }: ICustomTableProps) => (
-  <Table sx={{ minWidth: 700 }} aria-label="customized table">
-    <TableHead>
-      <StyledTableHeaderRow>
-        <TableCell>{MONTHLY_REVENUE_TABLE_KEY.DATE_TITLE}</TableCell>
-        {
-          columns.map((item: any) => (
-            <TableCell align="right" key={item}>{item}</TableCell>
-          ))
-        }
-      </StyledTableHeaderRow>
-    </TableHead>
-    <TableBody>
-      {
-        rows.map((row: any) => (
-          row ? (
-            <StyledTableRow key={row.name} hover>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              {columns.map((item: any) => (
-                <TableCell component="th" align="right" scope="row">
-                  {row[item]}
+const CustomTable = ({ columns, rows }: ICustomTableProps) => {
+  return (
+    <Table sx={{ minWidth: 700 }} aria-label="customized table">
+      <TableHead>
+        <StyledTableHeaderRow>
+          <TableCell>{MONTHLY_REVENUE_TABLE_KEY.DATE_TITLE}</TableCell>
+          {columns.map((item: any) => (
+            <TableCell align="right" key={item}>
+              {item}
+            </TableCell>
+          ))}
+        </StyledTableHeaderRow>
+      </TableHead>
+      <TableBody>
+        {rows.map((row: any) => {
+          if (!row) {
+            return (
+              <Box display="flex" key={row} justifyContent="center">
+                <CircularProgress />
+              </Box>
+            );
+          }
+          if (row) {
+            return (
+              <StyledTableRow key={row.name} hover>
+                <TableCell component="th" scope="row">
+                  {row.name}
                 </TableCell>
-              ))}
-            </StyledTableRow>
-          ) : <Box display="flex" justifyContent="center"><CircularProgress /></Box>
-        ))
-      }
-    </TableBody>
-  </Table>
-);
+                {columns.map((item: any) => (
+                  <TableCell key={item} component="th" align="right" scope="row">
+                    {row[item]}
+                  </TableCell>
+                ))}
+              </StyledTableRow>
+            );
+          }
+          if (row.length === 0) {
+            return (
+              <Box display="flex" key={row} justifyContent="center">
+                無相關資料
+              </Box>
+            );
+          }
+          // row ? (
+          //   <StyledTableRow key={row.name} hover>
+          //     <TableCell component="th" scope="row">
+          //       {row.name}
+          //     </TableCell>
+          //     {columns.map((item: any) => (
+          //       <TableCell key={item} component="th" align="right" scope="row">
+          //         {row[item]}
+          //       </TableCell>
+          //     ))}
+          //   </StyledTableRow>
+          // ) : (
+          //   <Box display="flex" key={row} justifyContent="center">
+          //     <CircularProgress />
+          //   </Box>
+          // )
+        })}
+      </TableBody>
+    </Table>
+  );
+};
 
 export default CustomTable;
